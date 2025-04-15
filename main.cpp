@@ -28,21 +28,14 @@ int main() {
         parola_diagonale += m[i][i];
     }
 
-    // Controlla se la parola è presente in una delle righe
+
     string parola_riga;
-
     for (int i = 0; i < 5; i++) {
-        string colonna;
-        for (int j = 0; j < 5; j++) {
-            colonna += m[j][i];
-        }
-        if (colonna.find(parola) != string::npos) {
+        if (m[i] == parola) {
             parola_riga = m[i];
-
             break;
         }
     }
-
 
     //Stampa matrice e risultato
     cout << endl;
@@ -54,10 +47,10 @@ int main() {
 
     cout << endl;
 
-    cout << parola_riga << " " << parola_diagonale << endl;
-
     if (parola_riga == parola_diagonale) {
         cout << " La parola " << parola << " e leggibile sia in diagonale che sulla riga" << endl;
+    } else {
+        cout << " La parola " << parola << "NON e leggibile sia in diagonale che sulla riga" << endl;
     }
 
 
